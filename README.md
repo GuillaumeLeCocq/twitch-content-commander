@@ -33,9 +33,9 @@ Then, create a `config.json` file at the project root level with the following c
     },
     "contents": [
         {
-            "triggerOn": ["cute", "phoque", "seal"],    // Word for triggering (only one word, setence won't work, part of word won't work)
-            "file": "cutieseal.mp4",                    // FileName
-            "type": "video/mp4"                         // Type of file : Image for png/gif ... or video/mp4 video/webm ... 
+            "triggerOn": ["cute", "phoque", "seal"],    
+            "file": "cutieseal.mp4",                    
+            "type": "video/mp4"                         
         },
         {
             "triggerOn": ["clap", "bravo", "gg", "👏" , "👏👏", "👏👏👏", "👏👏👏👏" , "👏👏👏👏👏"],
@@ -60,12 +60,12 @@ Then, create a `config.json` file at the project root level with the following c
     ],
     "defaultContent" :
         {
-            "triggerOn": [], // Don't touch, won't be used
-            "file": "default.png",  // If you want to update default img to gif, update index.html img too
-            "type": "image"  // Don't touch, won't be used
+            "triggerOn": [], 
+            "file": "default.png",  
+            "type": "image" 
         },
-    "resetAfter": 5000,     // Time for an image to go back to default in MS (5000 = 5 Seconds)
-    "timeBetweenMsg": 10000 // Time between two content displayed in MS
+    "resetAfter": 5000,     
+    "timeBetweenMsg": 10000 
 }
 ````
 
@@ -75,15 +75,23 @@ Then, create a `config.json` file at the project root level with the following c
 - `oauthToken` authentication token from https://twitchapps.com/tmi/
 - `channelName` channel chat to watch
 
-**Gif configuration**
+**Content configuration**
 
 - `triggerOn` keywords which trigger the GIF change
-- `file` the GIF filename to display, without the extension
+- `file` the filename to display, WITH the extension
+- `type` the type : "image" for png / gif ... "video/mp4" for mp4 "video/webm" for webm
+
+**defaultContent**
+
+- "triggerOn" : not used, do not touch
+- "file" : name of file, if you want to update it you need to update index.html too
+- "type" : not used, do not touch
 
 **Other configuration**
 
-- `resetAfter` (in ms) time before reverting the displayed gif to `default.gif`
-
+- `resetAfter` (in ms) time before reverting the displayed Image to `default.png` (Video are read once and then come back)
+- `timeBetweenMsg` (in ms) time before taking a new request
+  
 ## Run
 
 ````
